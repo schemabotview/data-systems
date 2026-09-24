@@ -6,6 +6,7 @@ import { partitioning } from './partitioning'
 import { transactions } from './transactions'
 import { faults } from './faults'
 import { consistency } from './consistency'
+import { consensus } from './consensus'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored:
@@ -20,6 +21,7 @@ export const COURSES: Record<string, Course> = {
   [transactions.id]: transactions,
   [faults.id]: faults,
   [consistency.id]: consistency,
+  [consensus.id]: consensus,
 }
 
 export type { Course, Section }

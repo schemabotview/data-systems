@@ -21,7 +21,7 @@ export const choosingIsolation: Scene = {
         ['Serializable (SSI)', 'stopped', 'stopped', 'stopped'],
       ],
     },
-    { id: 'names', label: 'The names lie', sub: "Oracle's SERIALIZABLE is snapshot isolation", pattern: 'warn', icon: 'ban' },
+    { id: 'names', label: 'The names lie', sub: "Oracle's is snapshot isolation", pattern: 'warn', icon: 'ban' },
   ],
   edges: [{ source: 'matrix', target: 'names' }],
 }

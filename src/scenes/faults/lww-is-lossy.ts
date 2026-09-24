@@ -9,10 +9,10 @@ export const lwwIsLossy: Scene = {
   title: 'Last write wins, by the wrong clock',
   flow: 'TB',
   nodes: [
-    { id: 'skew', label: "Node A's clock is 5 ms ahead", sub: 'well within a healthy NTP tolerance', pattern: 'warn', icon: 'clock' },
+    { id: 'skew', label: 'A is 5 ms ahead', sub: 'inside NTP tolerance', pattern: 'warn', icon: 'clock' },
     { id: 'a', label: 'A writes first', sub: 'and stamps it 10:00:00.105', pattern: 'service', icon: 'pencil' },
     { id: 'b', label: 'B writes 2 ms later', sub: 'and stamps it 10:00:00.102', pattern: 'service', icon: 'pencil' },
-    { id: 'drop', label: "B's write is discarded", sub: 'it was later, and its number is smaller', pattern: 'warn', icon: 'trash' },
+    { id: 'drop', label: "B's write dropped", sub: 'later, smaller number', pattern: 'warn', icon: 'trash' },
   ],
   edges: [
     { source: 'skew', target: 'a' },

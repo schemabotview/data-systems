@@ -188,8 +188,11 @@ for (const file of walk('src/scenes')) {
     // leaf model flagged every plot in this repo at ~114px against a 92px ceiling that is not its
     // ceiling. (The sibling repos' copies of this file still omit both; neither uses those kinds.)
     if (/\bchildren:/.test(body) || /\bkind: '(code|table|memory|plot)'/.test(body) || /variant: 'tile'/.test(body)) continue
-    const label = (body.match(/\blabel: '([^']*)'/) || ['', ''])[1] || (src.match(new RegExp(`id: '${id}',\\s*\\n?\\s*label: '([^']*)'`)) || ['', ''])[1]
-    const sub = (body.match(/\bsub: '([^']*)'/) || ['', ''])[1]
+    // BOTH quote styles. A label containing an apostrophe has to be written in double quotes, and
+    // the single-quote-only regex this started as simply did not see those nodes — one of them
+    // ("The candidate's log is at least as complete") overflowed its card with a green check.
+    const label = (body.match(/\blabel: '([^']*)'/) || body.match(/\blabel: "([^"]*)"/) || ['', ''])[1] || (src.match(new RegExp(`id: '${id}',\\s*\\n?\\s*label: ['"]([^'"]*)['"]`)) || ['', ''])[1]
+    const sub = (body.match(/\bsub: '([^']*)'/) || body.match(/\bsub: "([^"]*)"/) || ['', ''])[1]
     if (!label) continue
     const h = cardHeight(label, sub)
     if (h > CARD_H_MAX) {
