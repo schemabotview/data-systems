@@ -26,7 +26,7 @@ export const modelChoice: Scene = {
     {
       id: 'reality',
       label: 'Nobody picks once',
-      sub: 'a real system runs two or three of these',
+      sub: 'two or three, in one product',
       pattern: 'storage',
       icon: 'boxes',
     },

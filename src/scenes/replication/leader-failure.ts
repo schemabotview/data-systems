@@ -20,7 +20,7 @@ export const leaderFailure: Scene = {
       children: [
         { id: 'lost', label: 'Lost writes', sub: 'async writes the new leader never saw', pattern: 'warn', icon: 'trash' },
         { id: 'split', label: 'Split brain', sub: 'the old leader comes back, still leading', pattern: 'warn', icon: 'gitbranch' },
-        { id: 'short', label: 'Timeout too short', sub: 'a load spike triggers a needless failover', pattern: 'warn', icon: 'zap' },
+        { id: 'short', label: 'Timeout too short', sub: 'a load spike is enough', pattern: 'warn', icon: 'zap' },
         { id: 'long', label: 'Timeout too long', sub: 'a real outage lasts that much longer', pattern: 'warn', icon: 'clock' },
       ],
     },

@@ -11,7 +11,7 @@ export const addingAFollower: Scene = {
   nodes: [
     { id: 'snap', label: 'Snapshot the leader', sub: 'no lock — MVCC gives a consistent view', pattern: 'storage', icon: 'copy' },
     { id: 'copy', label: 'Copy it to the new node', sub: 'minutes or hours; nobody waits', pattern: 'network', icon: 'swap' },
-    { id: 'ask', label: 'Ask for the log', sub: 'from the position stamped on the snapshot', pattern: 'service', icon: 'scroll' },
+    { id: 'ask', label: 'Ask for the log', sub: 'from the snapshot position', pattern: 'service', icon: 'scroll' },
     { id: 'caught', label: 'Catch up, then stay', sub: 'it is now an ordinary follower', pattern: 'service', icon: 'circlecheck' },
   ],
   edges: [

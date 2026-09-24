@@ -19,7 +19,7 @@ export const writeConflicts: Scene = {
         { id: 'ub', label: 'Ben renames it', sub: '→ "Q3 roadmap"', pattern: 'user', icon: 'pencil' },
       ],
     },
-    { id: 'accepted', label: 'Both succeed locally', sub: 'the conflict surfaces on sync, later', pattern: 'warn', icon: 'circlecheck' },
+    { id: 'accepted', label: 'Both succeed locally', sub: 'the conflict surfaces later', pattern: 'warn', icon: 'circlecheck' },
     {
       id: 'ways',
       kind: 'table',

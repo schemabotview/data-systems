@@ -24,7 +24,7 @@ export const lsmVsBtree: Scene = {
         ['Latency', 'better, until compaction hits', 'flat and predictable'],
       ],
     },
-    { id: 'use', label: 'Where each one ended up', sub: 'LSM: Cassandra · RocksDB. B-tree: Postgres · MySQL', pattern: 'external', icon: 'database' },
+    { id: 'use', label: 'Where each landed', sub: 'LSM: Cassandra. B-tree: Postgres', pattern: 'external', icon: 'database' },
   ],
   edges: [{ source: 'table', target: 'use' }],
 }

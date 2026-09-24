@@ -33,7 +33,11 @@ import { join } from 'node:path'
 // A leaf card is 210×96 with a 134px text column (icon 26 + gap 14 + padding 18×2). What matters is
 // how many LINES the text wraps to, and the ceiling is the CARD'S OWN HEIGHT — not another repo's
 // tolerance. Practical rule: keep the LABEL to 2 wrapped lines; 2 label + 2 sub = 76px and fits.
-const CARD_H_MAX = 92
+// 88, not the 92 the sibling repos carry. 92 is the card's own height, so a text block modelling at
+// exactly 92 has zero slack and overflows on screen — two did, in `partitioning`: a 2-line label
+// over a 3-line sub lands on 92.0 precisely and passes a `> CARD_H_MAX` test. Four pixels of margin
+// costs one word and removes the whole boundary case.
+const CARD_H_MAX = 88
 const LABEL_CPL = 12 // chars per line at 18px/600 in a 134px column (word-wrapped, measured)
 const SUB_CPL = 20 // chars per line at 13px
 const LINE_LABEL = 21.6 // 18px × 1.2
