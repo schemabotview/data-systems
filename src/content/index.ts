@@ -1,4 +1,5 @@
 import { models } from './models'
+import { storage } from './storage'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored:
@@ -6,6 +7,7 @@ import type { Course, Section } from './types'
 // consensus · pipelines.
 export const COURSES: Record<string, Course> = {
   [models.id]: models,
+  [storage.id]: storage,
 }
 
 export type { Course, Section }

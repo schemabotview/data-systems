@@ -62,6 +62,10 @@ has and which nodes are in them**. Four rules, each paid for by a defect that bu
    `many-to-one` went from three tables in a line to one splitting into two.
 4. **A container is a layout tool, not just a grouping one.** Nesting two peers with an edge between
    them puts that edge on its own internal axis, where nothing above or below can collide with it.
+5. **Author slides to ~950 modelled px, not the guard's ceiling.** `check-content.mjs` here is set to
+   1000, lowered from the 1100 the sibling repos carry: every `storage` slide first came in at
+   1021–1096, passed at 1100, and clipped its last line in any review window shorter than 16:9. The
+   `models` course sits at 753–904 and has never clipped. Two bullets is the whole cost.
 
 ## Working agreement
 

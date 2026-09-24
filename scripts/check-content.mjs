@@ -39,7 +39,13 @@ const SUB_CPL = 20 // chars per line at 13px
 const LINE_LABEL = 21.6 // 18px × 1.2
 const LINE_SUB = 15.6 // 13px × 1.2
 // Landscape design metrics, read off index.css (.stage--section .slide-panel__scaler).
-const SLIDE_H_MAX = 1100 // pane ≈ 1080; the model runs ~7% high, so this is the practical ceiling
+// Lowered from the 1100 the sibling repos carry. 1100 is the ceiling at a true 16:9 frame; every
+// `storage` slide modelled between 1021 and 1096, passed this guard, and then clipped its last line
+// in a review window whose viewport was shorter than 16:9 (browser chrome eats ~190px of an already
+// short laptop screen, so a 1600×990 window renders at about 0.53 rather than 0.5625). Authoring to
+// 1000 costs two bullets a slide and makes the frame safe to review anywhere. The `models` course,
+// authored before this was found, sits at 753–904 and renders correctly in every window tried.
+const SLIDE_H_MAX = 1000
 const PANE = 806, PAD_X = 60, FS = 26
 const TEXT_W = PANE - PAD_X * 2 // 686
 const LI_W = TEXT_W - 30 // li has padding-left: 30
