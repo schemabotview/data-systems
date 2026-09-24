@@ -1,0 +1,19 @@
+/* data-systems' design surface — the three tokens @graphlearning/shell leaves to the repo.
+   Imported AFTER the shell's stylesheet in main.tsx, so these win the cascade.
+
+   --brand is a magenta-rose, and it is the one wide gap left in the catalog. The warm-red end
+   (databricks #ff3621, dbt #ff694a, spark #e25a1c, aws #f0902f, linux #f2b632), the blue end
+   (azure #3aa0ff, dw #5b8cff, python #4b8bbe, snowflake #29b5e8), the teal (sql #34e0d0) and the
+   violets (supervised #7c5cff, soft-skills #9d7cf4) are all occupied. Magenta sits on the far side
+   of red from every one of them, so this repo is identifiable in a catalog grid at thumbnail size.
+
+   Deliberately NOT any PATTERNS accent — the engine's user-purple #c98bff and warn-red #f0656f both
+   appear INSIDE scenes, and a brand that matched one would make the eyebrow read as a node.
+
+   --brand is warm, so the slide's `###` counter tone is cool — the inversion supervised-learning
+   uses in the other direction. */
+:root {
+  --brand: #e8489b; /* magenta-rose — eyebrow, links, the catalog card tint */
+  --brand-hover: #f56fb4; /* lighter rose — the eyebrow's hover state */
+  --accent-2: #5ad2ff; /* cool counter tone to --brand: the slide's `###` subheading */
+}
