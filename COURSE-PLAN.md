@@ -1,7 +1,8 @@
 # Data Systems — course plan
 
 The full section plot for the ten-course spine. `CLAUDE.md` is the operational summary; this is the
-detail. **105 sections.**
+detail. **105 sections — all authored and verified in the browser** (narration wavs still to be generated;
+see `CLAUDE.md`).
 
 The ordering is *Designing Data-Intensive Applications*' chapter order, used as a private syllabus:
 the ideas are distilled in original words with original diagrams, and the book's name, figures and
@@ -13,7 +14,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 
 ---
 
-## 01 · `models` — Data models & query shapes (9) ✅ authored
+## 01 · `models` — Data models & query shapes (9) ✅
 
 1. `what-a-data-system-is` — db + cache + index + queue as one composition; the arrows are the design
 2. `relational-shape` — rows of one shape; relationships stated as keys, resolved at read time
@@ -25,7 +26,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 8. `query-languages` — declarative leaves the how empty on purpose; the loop pins the plan
 9. `choosing-a-model` — read the model off the shape of the data; nobody picks once
 
-## 02 · `storage` — Storage engines (11)
+## 02 · `storage` — Storage engines (11) ✅
 
 1. `the-simplest-database` — append to a file, grep it back: the log, and its O(n) read
 2. `hash-index` — key → byte offset in memory; fast, and bounded by RAM
@@ -39,7 +40,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 10. `secondary-indexes` — heap file vs clustered, covering indexes, multi-column
 11. `column-store` — OLTP against OLAP; columnar layout, compression, sort order
 
-## 03 · `encoding` — Encoding & schema evolution (9)
+## 03 · `encoding` — Encoding & schema evolution (9) ✅
 
 1. `why-encoding-matters` — in-memory graph → bytes → in-memory graph, on two different versions
 2. `language-formats` — pickle and Java serialization, and why they lose
@@ -51,7 +52,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 8. `dataflow-through-databases` — old code reads the new row; data outlives code
 9. `dataflow-services-and-queues` — REST/RPC vs broker, and who must upgrade first
 
-## 04 · `replication` — Replication (12)
+## 04 · `replication` — Replication (12) ✅
 
 1. `why-replicate` — latency, availability, read throughput: three reasons, three designs
 2. `single-leader` — one node takes writes, any node serves reads
@@ -66,7 +67,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 11. `write-conflicts` — convergence: LWW, version vectors, merge, CRDT
 12. `leaderless` — w + r > n, read repair, anti-entropy, sloppy quorums
 
-## 05 · `partitioning` — Partitioning & sharding (10)
+## 05 · `partitioning` — Partitioning & sharding (10) ✅
 
 1. `why-partition` — the dataset that does not fit, sitting on top of replication
 2. `partition-plus-replica` — the leader/follower grid laid over partitions
@@ -79,7 +80,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 9. `consistent-hashing` — the ring, virtual nodes, and what moves when a node joins
 10. `request-routing` — routing tier · any-node forwarding · client-aware; ZooKeeper as the map
 
-## 06 · `transactions` — Transactions & isolation (12)
+## 06 · `transactions` — Transactions & isolation (12) ✅
 
 1. `what-a-transaction-buys` — the failure cases you stop writing code for
 2. `acid-in-practice` — which of the four letters is marketing
@@ -94,7 +95,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 11. `ssi` — optimistic: detect a stale premise at commit time
 12. `choosing-isolation` — the anomaly × level matrix, and what each level costs
 
-## 07 · `faults` — Why distributed systems fail (10)
+## 07 · `faults` — Why distributed systems fail (10) ✅
 
 1. `partial-failure` — the defining property: some of it still works
 2. `unreliable-networks` — the dead node and the slow node are indistinguishable
@@ -107,7 +108,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 9. `fencing-tokens` — the monotonic token the resource checks: the one real fix
 10. `truth-by-majority` — the quorum decides; byzantine faults and the system model
 
-## 08 · `consistency` — Linearizability & causality (10)
+## 08 · `consistency` — Linearizability & causality (10) ✅
 
 1. `the-guarantee-ladder` — eventual ⊃ causal ⊃ linearizable, as containment
 2. `linearizability` — one copy, one timeline; a register that never goes backwards
@@ -120,7 +121,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 9. `broadcast-equals-linearizable` — building one out of the other, in both directions
 10. `ordering-summary` — which guarantee each real system actually gives you
 
-## 09 · `consensus` — Consensus & coordination (10)
+## 09 · `consensus` — Consensus & coordination (10) ✅
 
 1. `atomic-commit` — all nodes or none; why single-node commit is the easy case
 2. `two-phase-commit` — coordinator, prepare, the commit point, and the promise each node makes
@@ -133,7 +134,7 @@ highest search volume and the highest diagram dependence, and `models`/`encoding
 9. `membership-change` — adding and removing nodes without ever having two majorities
 10. `coordination-services` — ZooKeeper/etcd: locks, leases, discovery, partition assignment
 
-## 10 · `pipelines` — Batch, streams & CDC (12)
+## 10 · `pipelines` — Batch, streams & CDC (12) ✅
 
 1. `three-system-types` — services, batch and stream by their latency/throughput contract
 2. `unix-pipeline` — `sort | uniq -c` as the model: uniform interface, immutable input

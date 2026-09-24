@@ -7,6 +7,7 @@ import { transactions } from './transactions'
 import { faults } from './faults'
 import { consistency } from './consistency'
 import { consensus } from './consensus'
+import { pipelines } from './pipelines'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored:
@@ -22,6 +23,7 @@ export const COURSES: Record<string, Course> = {
   [faults.id]: faults,
   [consistency.id]: consistency,
   [consensus.id]: consensus,
+  [pipelines.id]: pipelines,
 }
 
 export type { Course, Section }

@@ -8,12 +8,13 @@ import { transactionsScenes } from './transactions'
 import { faultsScenes } from './faults'
 import { consistencyScenes } from './consistency'
 import { consensusScenes } from './consensus'
+import { pipelinesScenes } from './pipelines'
 
 // Scene registry. Sections reference scenes by id; scenes are grouped by course (one folder each,
 // mirroring src/content). Ids are globally unique across courses, so the flat lookup below is
 // unambiguous. Courses are added here as each is authored: models · storage · encoding ·
 // replication · partitioning · transactions · faults · consistency · consensus · pipelines.
-const ALL: Scene[] = [...modelsScenes, ...storageScenes, ...encodingScenes, ...replicationScenes, ...partitioningScenes, ...transactionsScenes, ...faultsScenes, ...consistencyScenes, ...consensusScenes]
+const ALL: Scene[] = [...modelsScenes, ...storageScenes, ...encodingScenes, ...replicationScenes, ...partitioningScenes, ...transactionsScenes, ...faultsScenes, ...consistencyScenes, ...consensusScenes, ...pipelinesScenes]
 
 export const SCENES: Record<string, Scene> = Object.fromEntries(ALL.map((s) => [s.id, s]))
 

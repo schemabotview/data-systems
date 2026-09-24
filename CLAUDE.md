@@ -27,6 +27,12 @@ and its "unbundling the database" half lands in `pipelines`.
 `models · storage · encoding · replication · partitioning · transactions · faults · consistency ·
 consensus · pipelines`. Played in syllabus order. Full section plot: [`COURSE-PLAN.md`](./COURSE-PLAN.md).
 
+**Status: all ten courses authored — 105 sections, every one verified in the browser.** What is NOT
+done: **no narration wavs exist yet.** Every section ships with its `narration` text and no audio, so
+the app plays silence. That is one Colab pass over `scripts/colab_generate_audio.ipynb`, run by the
+owner; `npm run check` will start requiring a wav per section the moment a course has its first one.
+Nothing has been pushed anywhere — the repo has local commits and no remote.
+
 ## Layout
 
 ```
