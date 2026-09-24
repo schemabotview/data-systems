@@ -1,6 +1,7 @@
 import { models } from './models'
 import { storage } from './storage'
 import { encoding } from './encoding'
+import { replication } from './replication'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored:
@@ -10,6 +11,7 @@ export const COURSES: Record<string, Course> = {
   [models.id]: models,
   [storage.id]: storage,
   [encoding.id]: encoding,
+  [replication.id]: replication,
 }
 
 export type { Course, Section }
