@@ -3,3 +3,5 @@ dist
 dist-snapshot
 scripts/out
 .DS_Store
+scripts/segments
+scripts/.tmp
