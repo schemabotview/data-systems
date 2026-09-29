@@ -27,11 +27,18 @@ and its "unbundling the database" half lands in `pipelines`.
 `models · storage · encoding · replication · partitioning · transactions · faults · consistency ·
 consensus · pipelines`. Played in syllabus order. Full section plot: [`COURSE-PLAN.md`](./COURSE-PLAN.md).
 
-**Status: all ten courses authored — 105 sections, every one verified in the browser.** What is NOT
-done: **no narration wavs exist yet.** Every section ships with its `narration` text and no audio, so
-the app plays silence. That is one Colab pass over `scripts/colab_generate_audio.ipynb`, run by the
-owner; `npm run check` will start requiring a wav per section the moment a course has its first one.
-Nothing has been pushed anywhere — the repo has local commits and no remote.
+**Status (2026-09-29): complete through publishable video.** All ten courses authored — 105
+sections, every one verified in the browser — all 105 narration wavs generated, and every course
+recorded to a 4K MP4 with a thumbnail and a YouTube description beside it in `scripts/out/`. The
+repo is pushed to `schemabotview/data-systems`.
+
+Recording ran on `@graphlearning/shell@0.5.0`, whose recorders capture ONE 2.4s pulse period per
+section and loop it over the narration rather than holding the browser for the whole wav — 105
+sections at 2h53m of finished video, captured in 3.4s per section. Every course's duration matches
+its narration to within +0.22s. What is NOT published: nothing has been uploaded to YouTube.
+
+`scripts/out/` (videos, thumbnails, descriptions), `scripts/segments/` and `scripts/.tmp/` are all
+gitignored — the artefacts are local, and a course is rebuilt by re-running `npm run record`.
 
 ## Layout
 
@@ -89,6 +96,7 @@ for plan approval, no silent scaffolding.
 ## Narration
 
 `.tts` → `.wav` is a **Colab + Chatterbox** pass, run by the owner (`scripts/colab_generate_audio.ipynb`).
-Sections authored here ship with `narration` text and **no wav** until that pass runs; `npm run check`
-stays quiet about a course with no audio at all and starts requiring every file the moment that
-course has its first one.
+That pass has run for every course: all 105 wavs are in `public/audio/<course>/`. A section authored
+from here on ships with `narration` text and **no wav** until the pass runs again — and because its
+course already has audio, `npm run check` will fail on the missing file rather than stay quiet, which
+is the intended reminder.
